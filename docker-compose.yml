@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  $$IMAGE_NAME$$:
+  prometheus:
     build: .
-    image: homecentr/$$IMAGE_NAME$$
+    image: homecentr/prometheus
     restart: unless-stopped
