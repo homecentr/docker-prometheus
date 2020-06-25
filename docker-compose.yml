@@ -4,3 +4,5 @@ services:
     build: .
     image: homecentr/prometheus
     restart: unless-stopped
+    ports:
+      - 9090:9090
