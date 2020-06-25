@@ -2,4 +2,4 @@
 
 s6-setuidgid nonroot
 
-exec /bin/prometheus $PROMETHEUS_ARGS
+exec /bin/prometheus --config.file=/config/prometheus.yml --storage.tsdb.path=/prometheus $PROMETHEUS_ARGS

@@ -2,7 +2,7 @@ FROM prom/prometheus:v2.9.2 as prom
 
 FROM homecentr/base:2.4.3-alpine
 
-ENV PROMETHEUS_ARGS="--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
+ENV PROMETHEUS_ARGS="--web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
 
 LABEL maintainer="Lukas Holota <me@lholota.com>"
 LABEL org.homecentr.dependency-version=v2.9.2
@@ -24,6 +24,7 @@ WORKDIR /prometheus
 
 EXPOSE 9090
 
+VOLUME /config
 VOLUME /prometheus
 
 ENTRYPOINT [ "/init" ]
