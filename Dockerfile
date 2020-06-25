@@ -1,6 +1,6 @@
 ARG PROMETHEUS_VERSION=v2.9.2
 
-FROM homecentr/base:1.0.0 as base
+FROM homecentr/base:1.1.0 as base
 FROM prom/prometheus:$PROMETHEUS_VERSION as prom
 
 FROM alpine:3.11.3
