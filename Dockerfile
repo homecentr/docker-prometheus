@@ -1,22 +1,14 @@
-ARG PROMETHEUS_VERSION=v2.9.2
+FROM prom/prometheus:v2.9.2 as prom
 
-FROM homecentr/base:1.0.0 as base
-FROM prom/prometheus:$PROMETHEUS_VERSION as prom
+FROM homecentr/base:2.4.3-alpine
 
-FROM alpine:3.11.3
-
-ARG PROMETHEUS_VERSION
 ENV PROMETHEUS_ARGS="--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
 
 LABEL maintainer="Lukas Holota <me@lholota.com>"
-LABEL org.homecentr.dependency-version=$PROMETHEUS_VERSION
+LABEL org.homecentr.dependency-version=v2.9.2
 
 RUN apk add --no-cache \
-    shadow=4.7-r1 \
-    curl=7.67.0-r0
-
-# Copy S6 overlay
-COPY --from=base / /
+    curl=7.69.1-r0
 
 # Copy Prometheus binaries and default configuration
 COPY --from=prom /bin/prometheus /bin/prometheus
