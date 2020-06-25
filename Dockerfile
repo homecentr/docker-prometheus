@@ -3,7 +3,7 @@ ARG PROMETHEUS_VERSION=v2.9.2
 FROM homecentr/base:1.0.0 as base
 FROM prom/prometheus:$PROMETHEUS_VERSION as prom
 
-FROM alpine:3.11.3
+FROM alpine:3.12.0
 
 ARG PROMETHEUS_VERSION
 ENV PROMETHEUS_ARGS="--config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
