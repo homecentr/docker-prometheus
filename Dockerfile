@@ -1,4 +1,4 @@
-FROM prom/prometheus:v2.9.2 as prom
+FROM prom/prometheus:v2.19.2 as prom
 
 FROM homecentr/base:2.4.3-alpine
 
