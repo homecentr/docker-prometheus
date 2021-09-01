@@ -1,6 +1,6 @@
 FROM prom/prometheus:v2.19.2 as prom
 
-FROM homecentr/base:2.4.3-alpine
+FROM homecentr/base:3.2.0-alpine
 
 ENV PROMETHEUS_ARGS="--web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
 
