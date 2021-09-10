@@ -3,7 +3,6 @@
 [![](https://badgen.net/docker/size/homecentr/prometheus)](https://hub.docker.com/repository/docker/homecentr/prometheus)
 
 ![CI/CD on master](https://github.com/homecentr/docker-prometheus/workflows/CI/CD%20on%20master/badge.svg)
-![Regular Docker image vulnerability scan](https://github.com/homecentr/docker-prometheus/workflows/Regular%20Docker%20image%20vulnerability%20scan/badge.svg)
 
 # HomeCentr - prometheus
 
