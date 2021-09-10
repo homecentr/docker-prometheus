@@ -1,6 +1,6 @@
 FROM prom/prometheus:v2.19.2 as prom
 
-FROM homecentr/base:2.4.3-alpine
+FROM homecentr/base:3.4.0-alpine
 
 ENV PROMETHEUS_ARGS="--web.console.libraries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
 
@@ -8,7 +8,7 @@ LABEL maintainer="Lukas Holota <me@lholota.com>"
 LABEL org.homecentr.dependency-version=v2.9.2
 
 RUN apk add --no-cache \
-    curl=7.69.1-r0
+    curl=7.78.0-r0
 
 # Copy Prometheus binaries and default configuration
 COPY --from=prom /bin/prometheus /bin/prometheus
